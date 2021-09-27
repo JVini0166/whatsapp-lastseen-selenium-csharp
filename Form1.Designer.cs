@@ -38,13 +38,15 @@ namespace WhatsAppOnlineChecker
             this.statusLabel = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.salvarButton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(83, 114);
+            this.button1.Location = new System.Drawing.Point(42, 117);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 23);
+            this.button1.Size = new System.Drawing.Size(134, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
@@ -54,7 +56,7 @@ namespace WhatsAppOnlineChecker
             // 
             this.textBox1.Location = new System.Drawing.Point(181, 30);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.Size = new System.Drawing.Size(135, 23);
             this.textBox1.TabIndex = 1;
             // 
             // label1
@@ -73,7 +75,7 @@ namespace WhatsAppOnlineChecker
             this.registroOnlineBox.Location = new System.Drawing.Point(35, 182);
             this.registroOnlineBox.Name = "registroOnlineBox";
             this.registroOnlineBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.registroOnlineBox.Size = new System.Drawing.Size(268, 229);
+            this.registroOnlineBox.Size = new System.Drawing.Size(281, 229);
             this.registroOnlineBox.TabIndex = 3;
             this.registroOnlineBox.SelectedIndexChanged += new System.EventHandler(this.registroOnlineBox_SelectedIndexChanged);
             // 
@@ -96,9 +98,9 @@ namespace WhatsAppOnlineChecker
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(83, 146);
+            this.button2.Location = new System.Drawing.Point(42, 146);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 23);
+            this.button2.Size = new System.Drawing.Size(134, 23);
             this.button2.TabIndex = 7;
             this.button2.Text = "Sair";
             this.button2.UseVisualStyleBackColor = true;
@@ -113,11 +115,33 @@ namespace WhatsAppOnlineChecker
             this.label3.TabIndex = 8;
             this.label3.Text = "By: José Vinícius de Paula Santos";
             // 
+            // salvarButton
+            // 
+            this.salvarButton.Location = new System.Drawing.Point(182, 117);
+            this.salvarButton.Name = "salvarButton";
+            this.salvarButton.Size = new System.Drawing.Size(134, 23);
+            this.salvarButton.TabIndex = 9;
+            this.salvarButton.Text = "Salvar incrementando";
+            this.salvarButton.UseVisualStyleBackColor = true;
+            this.salvarButton.Click += new System.EventHandler(this.salvarButton_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(181, 146);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(135, 23);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Salvar sobrescrevendo";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 450);
+            this.ClientSize = new System.Drawing.Size(334, 450);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.salvarButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.statusLabel);
@@ -130,6 +154,7 @@ namespace WhatsAppOnlineChecker
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "WhatsApp Online Checker";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,6 +170,9 @@ namespace WhatsAppOnlineChecker
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button salvarButton;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button3;
     }
 }
 

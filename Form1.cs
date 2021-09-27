@@ -16,6 +16,7 @@ namespace WhatsAppOnlineChecker
     public partial class Form1 : Form
     {
         IWebDriver browser = new ChromeDriver();
+        String nomeArquivo = "registros.txt";
 
         public Form1()
         {
@@ -94,6 +95,56 @@ namespace WhatsAppOnlineChecker
         {
             this.Close();
             browser.Quit();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salvarButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Tem certeza? Está salvando registro_antigo + registro_novo!", "Salvar dados em arquivo de texto", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(nomeArquivo, true);
+                foreach (var item in registroOnlineBox.Items)
+                {
+                    SaveFile.WriteLine(item.ToString());
+                }
+
+                SaveFile.Close();
+                MessageBox.Show("Seus registros foram salvos junto com os antigos no local do programa num arquivo chamado: " + nomeArquivo);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                
+            }
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Tem certeza? Está apagando os velhos registros e salvando somente os novos!", "Salvar dados em arquivo de texto", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(nomeArquivo, true);
+                foreach (var item in registroOnlineBox.Items)
+                {
+                    SaveFile.WriteLine(item.ToString());
+                }
+                SaveFile.Close();
+                MessageBox.Show("Seus registros antigos foram apagados e os recentes salvos no local do programa num arquivo chamado: " + nomeArquivo);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+   
+            }  
         }
     }
 }
